@@ -1,5 +1,6 @@
-package com.example.Tribici;
+package com.example.Tribici.model;
 
+import com.example.Tribici.Estado;
 import jakarta.persistence.*;
 import lombok.*;
 

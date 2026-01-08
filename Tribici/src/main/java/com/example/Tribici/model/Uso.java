@@ -1,8 +1,7 @@
-package com.example.Tribici;
+package com.example.Tribici.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -34,7 +33,7 @@ public class Uso {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private  Usuario usuario;
+    private Usuario usuario;
 
     @Override
     public boolean equals(Object o) {

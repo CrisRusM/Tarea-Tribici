@@ -1,8 +1,7 @@
-package com.example.Tribici;
+package com.example.Tribici.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Objects;
 import java.util.Set;
