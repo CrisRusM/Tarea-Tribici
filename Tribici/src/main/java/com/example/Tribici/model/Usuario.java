@@ -10,7 +10,6 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -25,18 +24,16 @@ public class Usuario {
     private int pin;
     private double saldo;
 
-    @OneToMany
-    Set<Uso> usos;
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        return numTarjeta == usuario.numTarjeta && pin == usuario.pin && Double.compare(saldo, usuario.saldo) == 0 && Objects.equals(id, usuario.id) && Objects.equals(nombre, usuario.nombre) && Objects.equals(usos, usuario.usos);
+        return numTarjeta == usuario.numTarjeta && pin == usuario.pin && Double.compare(saldo, usuario.saldo) == 0 && Objects.equals(id, usuario.id) && Objects.equals(nombre, usuario.nombre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, numTarjeta, pin, saldo, usos);
+        return Objects.hash(id, nombre, numTarjeta, pin, saldo);
     }
 }

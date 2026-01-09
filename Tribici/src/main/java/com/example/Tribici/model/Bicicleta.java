@@ -11,7 +11,6 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -29,18 +28,17 @@ public class Bicicleta {
     @JoinColumn(name = "estacion_id")
     private Estacion estacion;
 
-    @OneToMany
-    Set<Uso> usos;
+
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Bicicleta bicicleta = (Bicicleta) o;
-        return Objects.equals(id, bicicleta.id) && Objects.equals(marca, bicicleta.marca) && Objects.equals(modelo, bicicleta.modelo) && estado == bicicleta.estado && Objects.equals(estacion, bicicleta.estacion) && Objects.equals(usos, bicicleta.usos);
+        return Objects.equals(id, bicicleta.id) && Objects.equals(marca, bicicleta.marca) && Objects.equals(modelo, bicicleta.modelo) && estado == bicicleta.estado && Objects.equals(estacion, bicicleta.estacion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, marca, modelo, estado, estacion, usos);
+        return Objects.hash(id, marca, modelo, estado, estacion);
     }
 }
